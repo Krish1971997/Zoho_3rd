@@ -39,6 +39,7 @@ public class Main {
 		customer1.setInsurance(insurance);
 
 		customer1.bookVehicle(car1, branch1, branch2, LocalDate.now(), LocalDate.of(2024, 12, 25), customer1);
+		customer1.bookVehicle(car1, branch2, branch1, LocalDate.now(), LocalDate.of(2024, 12, 23), customer1);
 		VehicleLog log = VehicleLog.getInstance();
 		log.printLog(car1.getLicenceNum());
 

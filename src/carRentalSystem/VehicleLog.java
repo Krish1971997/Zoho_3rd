@@ -21,13 +21,15 @@ public class VehicleLog {
 	}
 
 	public void addLog(String licenceNum, Log logInfo) {
-		List<Log> list = log.get(licenceNum);
-		if (list == null) {
-			log.put(licenceNum, new ArrayList<>());
-			log.get(licenceNum).add(logInfo);
-		} else {
-			list.add(logInfo);
-		}
+//		List<Log> list = log.get(licenceNum);
+//		if (list == null) {
+//			log.put(licenceNum, new ArrayList<>());
+//			log.get(licenceNum).add(logInfo);
+//		} else {
+//			list.add(logInfo);
+//		}
+		
+		log.computeIfAbsent(licenceNum, k -> new ArrayList<>()).add(logInfo);
 
 	}
 

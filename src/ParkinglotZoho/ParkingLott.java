@@ -9,6 +9,7 @@ public class ParkingLott {
     List<Vechical> report;
     
     public ParkingLott(String parkingAddress, int totalFloors) {
+    	
         this.parkingAddress = parkingAddress;
         this.totalFloors = totalFloors;
         this.report = new ArrayList<>();
