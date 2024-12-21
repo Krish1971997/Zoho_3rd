@@ -6,7 +6,7 @@ public class ParkingLott {
     public String parkingAddress;
     public int totalFloors;
     List<Floor> floorList;
-    List<Vechical> report;
+    List<Vechicle> report;
     
     public ParkingLott(String parkingAddress, int totalFloors) {
     	

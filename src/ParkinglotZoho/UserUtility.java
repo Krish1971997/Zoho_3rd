@@ -1,10 +1,15 @@
 package ParkinglotZoho;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Scanner;
 public class UserUtility {
     
     List<Userr>usereDetails;
-    Queue<Vechical>queue;
+    Queue<Vechicle>queue;
     Scanner sc = new Scanner(System.in);
     public UserUtility() {
         this.usereDetails = new ArrayList<>();
@@ -38,8 +43,8 @@ public class UserUtility {
         String type = sc.nextLine();
         System.out.println("Enter the car model");
         String carModel = sc.nextLine();
-        Vechical vechical = new Vechical( licenceNumber, carModel, type,userId);
-        queue.add(vechical);
+        Vechicle vechicle = new Vechicle( licenceNumber, carModel, type,userId);
+        queue.add(vechicle);
 
 
     }
@@ -51,7 +56,7 @@ public class UserUtility {
             System.out.println("No car registered yet");
             return;
         }
-        Vechical vechical = queue.peek();
+        Vechicle vechical = queue.peek();
 
         for(int i=0;i<lott.floorList.size();i++)
         {
@@ -80,7 +85,7 @@ public class UserUtility {
     public void RemoveCar(ParkingLott lott,int givenuserid)  
     {
         //throws CloneNotSupportedException
-        List<Vechical>duplicateReport=lott.report;
+        List<Vechicle>duplicateReport=lott.report;
         for(int i=0;i<lott.floorList.size();i++)
         {
             // public Map<Integer,ParkingSpace> parkingspace;
@@ -88,21 +93,21 @@ public class UserUtility {
            duplicatespace =lott.floorList.get(i).parkingspace;
             for(Map.Entry<Integer, ParkingSpace> entry : duplicatespace.entrySet())
             {
-                if(entry.getValue().isOccupied==true && entry.getValue().vechical.userid == givenuserid)
+                if(entry.getValue().isOccupied==true && entry.getValue().vechicle.userid == givenuserid)
                 {
-                    // entry.getValue().vechical = vechical;
+                    // entry.getValue().vechicle = vechicle;
                     // entry.getValue().vechical.entrytime =entry.getValue().vechical.generateTime();
                     // entry.getValue().isOccupied=true;
                      
-                     Vechical vechical = entry.getValue().vechical;
-                     vechical.exitTime = vechical.generateTime();
-                     duplicateReport.add((Vechical)vechical );
-                    System.out.println(vechical.toString());  
+                	Vechicle vechicle = entry.getValue().vechicle;
+                	vechicle.exitTime = vechicle.generateTime();
+                     duplicateReport.add((Vechicle)vechicle );
+                    System.out.println(vechicle.toString());  
                      entry.getValue().removeVehicle();
                      System.out.println();
                      System.out.println("After the remove vechical ");
                     System.out.println();
-                    vechical.toString() ;
+                    vechicle.toString() ;
                     return;
                 }
             }
@@ -114,9 +119,9 @@ public class UserUtility {
     public void costCalculationn(ParkingLott lott)
     {
         System.out.println("in side cost");
-        List<Vechical>duplicateReport=lott.report;
+        List<Vechicle>duplicateReport=lott.report;
 
-        for(Vechical value : duplicateReport)
+        for(Vechicle value : duplicateReport)
         {
             value.calculateTotalCost();
             System.out.println(value.toString());

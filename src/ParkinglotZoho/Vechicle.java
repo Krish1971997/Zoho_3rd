@@ -1,21 +1,21 @@
 package ParkinglotZoho;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-public class Vechical   {
+public class Vechicle   {
     
     public String licenceNumber;
     public String model;
-    public String vechicaltype;
+    public String vechicletype;
     public String entrytime;
     public String exitTime;
     public double totalcost;
     public int userid;
 
-    public Vechical(String licenceNumber, String model, String vechicaltype ,int userid) {
+    public Vechicle(String licenceNumber, String model, String vechicletype ,int userid) {
         this.userid = userid;
         this.licenceNumber = licenceNumber;
         this.model = model;
-        this.vechicaltype = vechicaltype;
+        this.vechicletype = vechicletype;
         this.entrytime = generateTime();
         this.exitTime = null;
         
@@ -56,7 +56,7 @@ public class Vechical   {
         return "Vechical{" +
                 "licenceNumber='" + licenceNumber + '\'' +
                 ", model='" + model + '\'' +
-                ", vechicaltype='" + vechicaltype + '\'' +
+                ", vechicaltype='" + vechicletype + '\'' +
                 ", entrytime='" + entrytime + '\'' +
                 ", exitTime='" + exitTime + '\'' +
                 ", totalcost=" + totalcost +
