@@ -14,29 +14,24 @@ public class CarRentalSystem {
 	private static CarRentalSystem instance = null;
 
 	private CarRentalSystem() {
-
 	}
 
 	public void addBarCodeInfo(Vehicle vehicle) {
 		barCodeReader.put(vehicle.getBarcode(), vehicle);
-
 	}
 
 	public void readBarCode(String barcode) {
 		System.out.println("Barcode : " + barcode);
 		System.out.println(barCodeReader.get(barcode));
-
 	}
 
 	public Vehicle getVehicleInfoBasedMemId(String id) {
 		System.out.println(memVehInfo.get(id));
 		return memVehInfo.get(id);
-
 	}
 
 	public void getMemberInfoBasedvehicleNum(String licenceNo) {
 		System.out.println(vehMemInfo.get(licenceNo));
-
 	}
 
 	public void updateMemVehicleInfo(Customer customer, Vehicle vehicle) {
@@ -56,7 +51,6 @@ public class CarRentalSystem {
 
 	public void addBranch(String id, LocalBrach branch) {
 		localbranch.put(id, branch);
-
 	}
 
 	public double calculateAmount(Vehicle vehicle, LocalDate returnDate) {
@@ -72,7 +66,5 @@ public class CarRentalSystem {
 
 		double actualAmount = vehicleAmount * (end - startDate);
 		return actualAmount + fine;
-
 	}
-
 }

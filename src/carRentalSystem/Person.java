@@ -12,21 +12,14 @@ public class Person {
 		this.name = name;
 		this.type = type;
 	}
-	
-	
 
 	public String getId() {
 		return id;
 	}
 
-
-
-
-
 	@Override
 	public String toString() {
 		return "Person [addr=" + addr + ", id=" + id + ", name=" + name + ", type=" + type + "]";
 	}
-	
-	
+
 }

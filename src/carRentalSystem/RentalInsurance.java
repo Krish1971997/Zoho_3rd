@@ -11,5 +11,4 @@ public class RentalInsurance {
 	public void pay(Double amount) {
 		totalSum = totalSum - amount;
 	}
-
 }

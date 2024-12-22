@@ -6,7 +6,7 @@ public class BookVehicleHelper {
 	
 	public boolean bookVehicle(Vehicle vehicle, LocalBrach source, LocalBrach destination, LocalDate startDate,
 			LocalDate endDate, Customer customer) {
-		if (VehicleAvailbityType.AVAILABLE == vehicle.getAvailabity()) {
+		if (vehicle.isVechicleAvialable()) {
 			vehicle.setAvailabity(VehicleAvailbityType.BOOKED);
 			VehicleLog log = VehicleLog.getInstance();
 			vehicle.setStartDate(startDate);
@@ -15,7 +15,6 @@ public class BookVehicleHelper {
 			sys.updateMemVehicleInfo(customer, vehicle);
 			sys.updatevehMemInfo(customer, vehicle);
 			log.addLog(vehicle.getLicenceNum(), new Log(startDate, vehicle.getAvailabity(), customer));
-
 			return true;
 		}
 		return false;

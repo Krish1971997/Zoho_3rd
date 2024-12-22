@@ -9,9 +9,7 @@ public class VehicleLog {
 	Map<String, List<Log>> log = new HashMap<>();
 	private static VehicleLog instance = null;
 
-	private VehicleLog() {
-
-	}
+	private VehicleLog() {}
 
 	public static VehicleLog getInstance() {
 		if (instance == null) {
@@ -30,7 +28,6 @@ public class VehicleLog {
 //		}
 		
 		log.computeIfAbsent(licenceNum, k -> new ArrayList<>()).add(logInfo);
-
 	}
 
 	public void printLog(String licenceNum) {
@@ -38,7 +35,6 @@ public class VehicleLog {
 		for (Log val : list) {
 			System.out.println(val);
 		}
-
 	}
 
 	@Override

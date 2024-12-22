@@ -13,7 +13,6 @@ public class Vehicle {
 	private LocalDate endDate;
 	private VehicleType type;
 	private VehicleAvailbityType availabity;
-	
 
 	public Vehicle(String licenceNum, String barcode, String model, boolean hasRoof, int totalSeats, String compName,
 			VehicleType type) {
@@ -26,8 +25,7 @@ public class Vehicle {
 		this.type = type;
 		this.availabity = VehicleAvailbityType.AVAILABLE;
 	}
-	
-	
+
 	public String getBarcode() {
 		return barcode;
 	}
@@ -67,6 +65,10 @@ public class Vehicle {
 	public VehicleAvailbityType getAvailabity() {
 		return availabity;
 	}
+	
+	public boolean isVechicleAvialable() {
+		return VehicleAvailbityType.AVAILABLE==availabity;
+	}
 
 	public void setAvailabity(VehicleAvailbityType availabity) {
 		this.availabity = availabity;
@@ -77,7 +79,5 @@ public class Vehicle {
 		return "Vehicle [licenceNum=" + licenceNum + ", model=" + model + ", hasRoof=" + hasRoof + ", totalSeats="
 				+ totalSeats + ", compName=" + compName + ", availabity=" + availabity + "]";
 	}
-	
-	
 
 }

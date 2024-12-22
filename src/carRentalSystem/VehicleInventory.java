@@ -11,7 +11,6 @@ public class VehicleInventory {
 	static private VehicleInventory instance = null;
 
 	private VehicleInventory() {
-
 	}
 
 	public static VehicleInventory getInstance() {
@@ -30,15 +29,12 @@ public class VehicleInventory {
 		} else {
 			list.add(vehicle);
 		}
-
 	}
 
 	public void searchVehicle(VehicleType type) {
 		List<Vehicle> list = catelogue.get(type);
 		for (Vehicle vehicle : list) {
 			System.out.println(vehicle);
-
 		}
 	}
-
 }
