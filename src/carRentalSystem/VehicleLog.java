@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class VehicleLog {
+	
 	Map<String, List<Log>> log = new HashMap<>();
 	private static VehicleLog instance = null;
 
