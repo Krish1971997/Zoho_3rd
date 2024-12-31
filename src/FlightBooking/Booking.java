@@ -13,7 +13,6 @@ public class Booking {
             return;
         }
         
-        
         flight.tickets-=customerticket;
         temp.add(name);
         temp.add(String.valueOf(customerticket));
