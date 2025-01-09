@@ -18,6 +18,7 @@ import ParkingLotLatestModified.vehicles.Motorbike;
 import ParkingLotLatestModified.vehicles.Truck;
 import ParkingLotLatestModified.vehicles.Vehicle;
 
+// Rajesh Zoho class
 public class ParkingLotTest {
 
     public static void main(String[] args) {
