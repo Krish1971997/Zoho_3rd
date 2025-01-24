@@ -19,51 +19,38 @@ public class Board {
 		addLadder();
 		addSnake();
 
-		for (Entry<Integer, BoardPropery> prop : boardProperty.entrySet()) {
+		for (Entry<Integer, BoardPropery> prop : boardProperty.entrySet())
 			System.out.println(prop);
-
-		}
-
 	}
 
 	public void addLadder() {
 
 		for (int i = 0; i < size;) {
-
 			Random random = new Random();
-
 			int end = random.nextInt(index - 1) + 1;
 			int start = random.nextInt(end);
-
 			if (end != start && !usedPoint.contains(end) && !usedPoint.contains(start)) {
 				boardProperty.put(start, new Ladder(start, end));
 				i++;
 				usedPoint.add(start);
 				usedPoint.add(end);
 			}
-
 		}
-
 	}
 
 	public void addSnake() {
 
 		for (int i = 0; i < size;) {
-
 			Random random = new Random();
-
 			int start = random.nextInt(index - 1) + 1;
 			int end = random.nextInt(start) - size;
-
 			if (end != start && !usedPoint.contains(end) && !usedPoint.contains(start)) {
 				boardProperty.put(start, new Snake(start, end));
 				i++;
 				usedPoint.add(start);
 				usedPoint.add(end);
 			}
-
 		}
-
 	}
 
 	public int getIndex() {
@@ -77,5 +64,4 @@ public class Board {
 	public void setBoardProperty(Map<Integer, BoardPropery> boardProperty) {
 		this.boardProperty = boardProperty;
 	}
-
 }

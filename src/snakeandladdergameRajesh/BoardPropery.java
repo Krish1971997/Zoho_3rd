@@ -40,9 +40,4 @@ public class BoardPropery {
 	public void setType(BoardPropertyType type) {
 		this.type = type;
 	}
-	
-	
-	
-	
-
 }

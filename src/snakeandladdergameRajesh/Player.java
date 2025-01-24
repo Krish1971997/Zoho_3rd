@@ -3,7 +3,7 @@ package snakeandladdergameRajesh;
 public class Player {
 	private int id;
 	private int position;
-	private boolean isReachedLastPosition ; 
+	private boolean isReachedLastPosition;
 
 	public Player(int id) {
 		this.id = id;
@@ -34,7 +34,4 @@ public class Player {
 	public void setReachedLastPosition(boolean isReachedLastPosition) {
 		this.isReachedLastPosition = isReachedLastPosition;
 	}
-	
-	
-
 }
