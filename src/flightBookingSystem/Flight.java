@@ -15,7 +15,7 @@ public class Flight {
         this.availableSeats = availableSeats;
         this.ticketPrice = ticketPrice;
         this.bookings = new HashMap<>();
-        this.bookingCounter = 0;
+        this.bookingCounter = 1;
     }
 
     // Book tickets for a flight
